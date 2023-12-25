@@ -6,7 +6,7 @@ import java.io.File
 
 class StudentRepo(val fileName:String) {
     fun loadStudents(): List<Student> {
-        val fileContent = File(fileName).readText()
+        val fileContent = File("file:///android_asset/$fileName").readText()
         println("Students loaded")
         return Json.decodeFromString(fileContent)
     }
